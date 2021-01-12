@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# App Spec
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Mandatory
 
-## Available Scripts
+### Todo List
 
-In the project directory, you can run:
+### Requirements
 
-### `npm start`
+The core functionality of a todo list type applicaton relies on the ability for users to easily manage and track their todos, therefore the following should be possible:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As a user,
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- I can (CRUD) Create, Read, Update, and Delete todo items
+- I can add a title(required) and a body(optional) to a todo item
+- I can add hashtags to any todo item
+- I can perform a text-based search that applies against title and/or body
+- I can filter by hashtag
+- I can see a list of todo items colored by hashtag
+- I when I refresh the page I can still see my todo items
 
-### `npm test`
+#### UX Considerations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure that it is clear to the user how they can create, edit or delete todos. Try to avoid the use of modals if possible.
 
-### `npm run build`
+#### Possible Implementation Strategies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For todo persistence, if you are not implementing a full backend, store the todos to the user's local state.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Otherwise, check out firebase or airtable to get a backend up and running quickly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Time Tracking
 
-### `npm run eject`
+### Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In order to expand this apps functionality beyond a simple todo app, we're going to implement a time tracker that allows the user to manage how long they spend working towards each goal or task. To make this possile, the following should be possible:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As a user,
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- I can track the number of days/hours/minutes/seconds I have worked on a task.
+- I can view the amount of time (if at all) I’ve spent on any given task
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### UX Considerations
 
-## Learn More
+#### Possible Implementation Strategies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Quick tip: Instead of tracking time on the client side, you can store the start/end times on the todo itself in the database. To handle time, you could use [moment.js](https://momentjs.com/). Although, some might say that it is [no longer necessary](https://dockyard.com/blog/2020/02/14/you-probably-don-t-need-moment-js-anymore).
